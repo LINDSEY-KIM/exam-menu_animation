@@ -1,0 +1,85 @@
+* {margin: 0; padding: 0; box-sizing: border-box;}
+
+html,body{
+  display: grid;
+  height: 100%;
+  place-items: center;
+  text-align: center;
+  background: #f2f2f2;
+}
+
+.wrap{
+  height: 60px;
+  width: 55vw;
+  background: #fff;
+  line-height: 60px;
+  border-radius: 50px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.25);
+}
+
+.wrap nav{
+  position: relative;
+  display: flex;
+}
+
+.wrap nav label{
+  flex: 1;
+  width: 100%;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.wrap nav label a{
+  position: relative;
+  z-index: -1;
+  color: #1d1f20;
+  font-size: 20px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.6s ease;
+}
+
+.wrap nav #home:checked ~ label.home a,
+.wrap nav #inbox:checked ~ label.inbox a,
+.wrap nav #contact:checked ~ label.contact a,
+.wrap nav #heart:checked ~ label.heart a,
+.wrap nav #about:checked ~ label.about a{
+  color: #fff;
+}
+
+.wrap nav label a i{
+  font-size: 25px;
+  margin: 0 7px;
+}
+
+.wrap nav .tab{
+  position: absolute;
+  height: 100%;
+  width: 20%;
+  left: 0;
+  bottom: 0;
+  z-index: 0;
+  border-radius: 50px;
+  background: linear-gradient(45deg, #05abe0 0%,#8200f4 100%);
+  transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrap nav #inbox:checked ~ .tab{
+  left: 20%;
+}
+
+.wrap nav #contact:checked ~ .tab{
+  left: 40%;
+}
+
+.wrap nav #heart:checked ~ .tab{
+  left: 60%;
+}
+
+.wrap nav #about:checked ~ .tab{
+  left: 80%;
+}
+
+.wrap nav input{
+  display: none;
+}
